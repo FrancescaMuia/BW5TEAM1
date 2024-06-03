@@ -31,6 +31,7 @@ public class Aziende extends BaseEntity{
     private String telefonoContatto;
     private String logoAziendale;
 
+
     @OneToMany
     private List<Indirizzi> indirizzi;
     private TipoClienti tipoClienti;
