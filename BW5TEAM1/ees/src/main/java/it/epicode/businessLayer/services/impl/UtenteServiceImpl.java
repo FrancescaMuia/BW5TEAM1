@@ -9,6 +9,8 @@ import it.epicode.businessLayer.services.UtenteService;
 import it.epicode.businessLayer.services.dto.LoginResponseDto;
 import it.epicode.businessLayer.services.dto.RegisterUtenteDto;
 import it.epicode.businessLayer.services.dto.RegisteredUtenteDto;
+import it.epicode.businessLayer.services.exceptions.InvalidLoginException;
+import it.epicode.businessLayer.services.exceptions.PersistEntityException;
 import it.epicode.config.JwtUtils;
 import it.epicode.dataLayer.entities.RoleEntity;
 import it.epicode.dataLayer.entities.Utenti;
@@ -17,24 +19,11 @@ import it.epicode.dataLayer.repositories.UtentiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.authentication.nomeutentiPasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import it.epicode.blog.businesslayer.services.Mapper;
-import it.epicode.blog.businesslayer.services.UtenteService;
-import it.epicode.blog.businesslayer.services.dto.LoginResponseDto;
-import it.epicode.blog.businesslayer.services.dto.RegisterutentiDto;
-import it.epicode.blog.businesslayer.services.dto.RegisteredUtenteDto;
-import it.epicode.blog.businesslayer.services.exceptions.InvalidLoginException;
-import it.epicode.blog.businesslayer.services.exceptions.PersistEntityException;
-import it.epicode.blog.config.JwtUtils;
-import it.epicode.blog.datalayer.entities.RoleEntity;
-import it.epicode.blog.datalayer.entities.Utenti;
-import it.epicode.blog.datalayer.repositories.RolesRepository;
-import it.epicode.blog.datalayer.repositories.utentiRepository;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -62,6 +51,7 @@ public class UtenteServiceImpl implements UtenteService {
 	Mapper<Utenti, RegisteredUtenteDto> mapRegisteredutenti;
 	@Autowired
 	Mapper<Utenti, LoginResponseDto> mapLogin;
+
 
 	@Override
 	public RegisteredUtenteDto register(RegisterUtenteDto utenti) {

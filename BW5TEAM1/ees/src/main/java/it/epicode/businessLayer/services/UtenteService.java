@@ -7,7 +7,8 @@ import it.epicode.businessLayer.services.dto.RegisteredUtenteDto;
 import java.util.Optional;
 
 public interface UtenteService {
-    RegisterUtenteDto register(RegisteredUtenteDto utente);
+
+    RegisteredUtenteDto register(RegisterUtenteDto utenti);
 
     Optional<LoginResponseDto> login(String nomeUtente, String password);
 
