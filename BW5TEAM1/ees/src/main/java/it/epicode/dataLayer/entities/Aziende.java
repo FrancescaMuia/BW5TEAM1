@@ -7,6 +7,7 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
@@ -37,5 +38,5 @@ public class Aziende extends BaseEntity{
     private TipoClienti tipoClienti;
 
     @OneToMany(mappedBy = "aziende")
-    private Fatture fatture;
+    private List<Fatture> fatture = new ArrayList<>();
 }
