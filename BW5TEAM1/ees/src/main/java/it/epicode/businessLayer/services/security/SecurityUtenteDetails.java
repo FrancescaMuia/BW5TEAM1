@@ -41,4 +41,4 @@ public class SecurityUtenteDetails implements UserDetails {
 				.build();
 	}
 }
-}
+
