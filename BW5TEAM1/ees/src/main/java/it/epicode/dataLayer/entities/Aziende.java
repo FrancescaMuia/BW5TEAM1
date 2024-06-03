@@ -37,4 +37,5 @@ public class Aziende extends BaseEntity{
 
     @OneToMany(mappedBy = "aziende")
     private Fatture fatture;
+
 }
