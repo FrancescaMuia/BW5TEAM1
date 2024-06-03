@@ -15,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder(setterPrefix = "with")
-@Table(name = "aziende")
-public class Aziende extends BaseEntity{
+@Table(name = "clienti")
+public class Clienti extends BaseEntity{
     private String ragioneSociale;
     private String partitaIva;
     private String email;

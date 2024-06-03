@@ -5,6 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
@@ -19,6 +22,6 @@ public class Utenti extends BaseEntity{
     private String nome;
     private String cognome;
     private String avatar;
-    private TipoUtenti tipoUtenti;
+    private final List<RoleEntity> roles = new ArrayList<>();
 
 }

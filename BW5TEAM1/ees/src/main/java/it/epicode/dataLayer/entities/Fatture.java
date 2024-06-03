@@ -19,6 +19,6 @@ public class Fatture extends BaseEntity{
     private double importo;
     private int numero;
     @ManyToOne
-    private Aziende aziende;
+    private Clienti aziende;
     private StatoFatture statoFatture;
 }
