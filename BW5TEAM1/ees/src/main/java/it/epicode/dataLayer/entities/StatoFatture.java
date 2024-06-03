@@ -13,4 +13,5 @@ import lombok.*;
 @Table(name = "stato_fatture")
 public class StatoFatture extends BaseEntity{
     private String stato;
+
 }
