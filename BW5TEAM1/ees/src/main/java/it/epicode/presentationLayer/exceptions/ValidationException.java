@@ -1,4 +1,4 @@
-package it.epicode.presentationlayer.exceptions;
+package it.epicode.presentationLayer.exceptions;
 
 import java.io.Serial;
 

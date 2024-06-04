@@ -1,4 +1,4 @@
-package it.epicode.presentationlayer.model;
+package it.epicode.presentationLayer.model;
 
 import jakarta.validation.constraints.NotNull;
 

@@ -51,6 +51,8 @@ public class ApplicationSecurityConfig {
                                 .requestMatchers(HttpMethod.POST,"/api/roles").permitAll() ////
                                 // solo per consentire la registrazione di un utente
                                 .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/provinces").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/cities").permitAll()
                                 // tutte le altre richieste sono accessibili ad utenti autenticati
                                 .requestMatchers("/**").authenticated() //
                 ) //

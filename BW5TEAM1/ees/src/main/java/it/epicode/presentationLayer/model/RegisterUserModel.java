@@ -1,10 +1,8 @@
-package it.epicode.presentationlayer.model;
+package it.epicode.presentationLayer.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-
-import java.util.List;
 
 public record RegisterUserModel(
         @NotBlank @Size(max = 125) String username,

@@ -1,4 +1,4 @@
-package it.epicode.presentationlayer.exceptions;
+package it.epicode.presentationLayer.exceptions;
 
 import org.springframework.validation.FieldError;
 import org.springframework.validation.ObjectError;

@@ -1,7 +1,7 @@
 package it.epicode.config;
 
 import it.epicode.businessLayer.exceptions.ServiceException;
-import it.epicode.presentationlayer.exceptions.FieldValidationException;
+import it.epicode.presentationLayer.exceptions.FieldValidationException;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;

@@ -20,6 +20,10 @@ public class Province extends BaseEntity{
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(nullable = false, length = 2)
+    @Column(nullable = false, length = 50)
     private String acronym;
+
+    @Column(nullable = false, length = 50)
+    private String region;
+
 }

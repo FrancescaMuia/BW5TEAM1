@@ -9,6 +9,6 @@ import java.util.Optional;
 public interface ProvinceRepository extends JpaRepository<Province, Long>, PagingAndSortingRepository<Province, Long> {
 
     Optional<Province> findOneByAcronym(String acronym);
-    Optional<Province> findOneByName(String name);
+    Province findOneByName(String name);
 
 }

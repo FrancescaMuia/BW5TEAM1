@@ -1,12 +1,11 @@
-package it.epicode.presentationlayer.controller;
+package it.epicode.presentationLayer.controller;
 
 import it.epicode.businessLayer.dto.RegisterUserDto;
 import it.epicode.businessLayer.dto.RegisteredUserDto;
 import it.epicode.businessLayer.services.UserService;
-import it.epicode.presentationlayer.exceptions.FieldValidationException;
-import it.epicode.presentationlayer.model.LoginModel;
-import it.epicode.presentationlayer.model.RegisterUserModel;
-import lombok.extern.slf4j.Slf4j;
+import it.epicode.presentationLayer.exceptions.FieldValidationException;
+import it.epicode.presentationLayer.model.LoginModel;
+import it.epicode.presentationLayer.model.RegisterUserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
