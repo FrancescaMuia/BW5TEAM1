@@ -2,9 +2,11 @@ package it.epicode.dataLayer.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class Comuni {
 
     @Id
@@ -13,6 +15,6 @@ public class Comuni {
     private String nome;
 
     @ManyToOne
-    @JoinColumn(name = "provincia_id")
+    @JoinColumn(name = "provincia", referencedColumnName = "nome")
     private Province provincia;
 }
