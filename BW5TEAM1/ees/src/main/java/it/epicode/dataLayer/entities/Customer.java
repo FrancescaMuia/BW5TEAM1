@@ -30,46 +30,48 @@ public class Customer extends BaseEntity {
     @Column(nullable = false, length = 100)
     private String email;
 
-    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private LocalDate dataInserimento;
 
-    @Column(nullable = false)
+    @Temporal(TemporalType.DATE)
     private LocalDate dataUltimoContatto;
 
-    @Column(nullable = false)
+
+    @Column(nullable = false, length = 100)
     private double fatturatoAnnuale;
 
-    @Column(length = 100)
+    @Column(nullable = false, length = 100)
     private String pec;
 
-    @Column(length = 15)
+    @Column(nullable = false, length = 15)
     private String telefono;
 
-    @Column(length = 100)
+    @Column(nullable = false, length = 100)
     private String emailContatto;
 
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     private String nomeContatto;
 
-    @Column(length = 50)
+    @Column(nullable = false, length = 50)
     private String cognomeContatto;
 
-    @Column(length = 15)
+    @Column(nullable = false, length = 15)
     private String telefonoContatto;
 
-    @Column
-    private String logoAziendale;
+    @Column(length = 300)
+    private String logo;
 
-    @OneToOne
+    @OneToMany
+    private List<Invoice> invoices;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "indirizzo_legale_id", referencedColumnName = "id")
     private Address indirizzoLegale;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "indirizzo_operativo_id", referencedColumnName = "id")
     private Address indirizzoOperativo;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private CustomerType customerType;
-
-    @OneToMany(mappedBy = "cliente")
-    private List<Invoice> fatture;
+    private CustomerType tipoCliente;
 }

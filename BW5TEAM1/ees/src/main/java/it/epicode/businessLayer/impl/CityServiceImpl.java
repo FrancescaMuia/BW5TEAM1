@@ -40,7 +40,7 @@ public class CityServiceImpl implements CityService {
                             .build())
                     .toList();
             cityRepository.saveAll(cityes);
-            log.info("Salvate");
+            log.info("Città Salvate");
         } catch (IOException e) {
             log.error("Errore durante il caricamento delle province dal file CSV", e);
             throw e;

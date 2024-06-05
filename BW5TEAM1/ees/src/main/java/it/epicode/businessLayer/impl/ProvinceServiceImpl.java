@@ -44,7 +44,7 @@ public class ProvinceServiceImpl implements ProvinceService {
                             .build())
                     .toList();
             provinceRepository.saveAll(province);
-            log.info("Salvate");
+            log.info("Province Salvate");
         } catch (IOException e) {
             log.error("Errore durante il caricamento delle province dal file CSV", e);
             throw e;

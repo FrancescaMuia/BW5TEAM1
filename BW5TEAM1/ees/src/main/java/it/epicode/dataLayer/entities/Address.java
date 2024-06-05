@@ -28,6 +28,6 @@ public class Address extends BaseEntity{
     @Column(nullable = false, length = 5)
     private String cap;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private City comune;
 }

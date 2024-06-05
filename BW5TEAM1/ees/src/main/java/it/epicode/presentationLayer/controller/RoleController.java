@@ -6,6 +6,7 @@ import it.epicode.presentationLayer.model.RoleModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,7 @@ public class RoleController {
 
 
     @PostMapping
-    public ResponseEntity<Role> createRole(@RequestBody RoleModel model) {
+    public ResponseEntity<Role> createRole(@RequestBody @Validated RoleModel model) {
 
         Role savedRole = roles.save(model.name());
         return new ResponseEntity<>(savedRole, HttpStatus.CREATED);

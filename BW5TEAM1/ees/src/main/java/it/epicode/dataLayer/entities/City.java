@@ -20,7 +20,6 @@ public class City extends BaseEntity{
     @Column(nullable = false, length = 100)
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "provinces", referencedColumnName = "name")
+    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     private Province province;
 }

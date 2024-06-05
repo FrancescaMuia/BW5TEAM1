@@ -1,5 +1,6 @@
 package it.epicode.config;
 
+import it.epicode.dataLayer.entities.enums.CustomerType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -48,11 +49,17 @@ public class ApplicationSecurityConfig {
                         authorize //
                                 // abilita l'accesso anonimo all'api di login
                                 .requestMatchers("/api/users/login").permitAll() //
-                                .requestMatchers(HttpMethod.POST,"/api/roles").permitAll() ////
+                                .requestMatchers(HttpMethod.POST,"/api/roles").permitAll() //
                                 // solo per consentire la registrazione di un utente
                                 .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/api/provinces").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/api/cities").permitAll()
+                                // autorizzazioni per operazioni CRUD sui clienti
+                                .requestMatchers(HttpMethod.GET, "/api/customers").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/customers").permitAll()
+                                .requestMatchers(HttpMethod.PUT, "/api/customers").permitAll()
+                                .requestMatchers(HttpMethod.DELETE, "/api/customers").permitAll()
+                                /*non li valido perche si occupano solo di compilare i csv sul db*/
+                               /* .requestMatchers(HttpMethod.POST, "/api/provinces").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/api/cities").permitAll()*/
                                 // tutte le altre richieste sono accessibili ad utenti autenticati
                                 .requestMatchers("/**").authenticated() //
                 ) //

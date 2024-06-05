@@ -1,6 +1,5 @@
 package it.epicode.businessLayer.services;
 
-import it.epicode.dataLayer.entities.City;
 import it.epicode.dataLayer.entities.Province;
 
 import java.io.IOException;

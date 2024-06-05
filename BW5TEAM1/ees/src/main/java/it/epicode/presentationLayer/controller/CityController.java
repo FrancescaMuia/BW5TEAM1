@@ -27,12 +27,12 @@ public class CityController {
     private CityService cityService;
 
     @Value("${city_file}")
-    private String provinceFile;
+    private String cityFile;
 
     @PostMapping
     public String importCities() throws IOException {
-        cityService.saveCity(Path.of(provinceFile));
-        return "Province importate con successo dal percorso file!";
+        cityService.saveCity(Path.of(cityFile));
+        return "Città importate con successo dal percorso file!";
     }
 
     @GetMapping
