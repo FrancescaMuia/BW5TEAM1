@@ -4,23 +4,15 @@ import it.epicode.dataLayer.entities.Province;
 import it.epicode.dataLayer.repositories.ProvinceRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
+
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
-@Service
+@Service("provinceService")
 public class ProvinceService {
 
     @Autowired
@@ -35,11 +27,13 @@ public class ProvinceService {
             br.readLine();
             while ((line=br.readLine()) != null){
                 String[] data = line.split(";");
+
+                if (provinciaRepo.findByNome(data[1])==null){
                 Province provincia = new Province();
                 provincia.setNome(data[1]);
                 provincia.setRegione(data[2]);
                 provinciaRepo.save(provincia);
-            }
+            }}
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
