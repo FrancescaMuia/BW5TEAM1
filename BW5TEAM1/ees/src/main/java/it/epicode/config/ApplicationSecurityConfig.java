@@ -53,10 +53,10 @@ public class ApplicationSecurityConfig {
                                 // solo per consentire la registrazione di un utente
                                 .requestMatchers(HttpMethod.POST, "/api/users").permitAll()
                                 // autorizzazioni per operazioni CRUD sui clienti
-                                .requestMatchers(HttpMethod.GET, "/api/customers").permitAll()
-                                .requestMatchers(HttpMethod.POST, "/api/customers").permitAll()
-                                .requestMatchers(HttpMethod.PUT, "/api/customers").permitAll()
-                                .requestMatchers(HttpMethod.DELETE, "/api/customers").permitAll()
+                                .requestMatchers(HttpMethod.GET, "/api/customers").hasAuthority("ADMIN")
+                                .requestMatchers(HttpMethod.POST, "/api/customers").hasAuthority("ADMIN")
+                                .requestMatchers(HttpMethod.PUT, "/api/customers").hasAuthority("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE, "/api/customers").hasAuthority("ADMIN")
                                 /*non li valido perche si occupano solo di compilare i csv sul db*/
                                /* .requestMatchers(HttpMethod.POST, "/api/provinces").permitAll()
                                 .requestMatchers(HttpMethod.POST, "/api/cities").permitAll()*/
